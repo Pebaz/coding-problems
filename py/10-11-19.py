@@ -10,23 +10,22 @@ def create_matrix(length):
     ]
 
 def rotate_matrix(m):
+    print('Before:')
     show_matrix(m)
     
     side = len(m[0])
     zones = side // 2
     
+    print('')
+
     for i in range(zones):
-        #buffer = [None] * (side - i - i)
-        
         the_side = range(i, side - i)
-        
+
         # Save each side
         top   = [m[i][r] for r in the_side]
         left  = [m[side - r - 1][i] for r in the_side]
         bot   = [m[side - i - 1][side - r - 1] for r in the_side]
         right = [m[r][side - i - 1] for r in the_side]
-        
-        #print(top, left, bot, right)
         
         # Swap them
         for buf_index, r in enumerate(the_side):
@@ -35,7 +34,7 @@ def rotate_matrix(m):
             m[r][side - i - 1]            = bot  [buf_index]  # Right = Bot
             m[i][r]                       = right[buf_index]  # Top = Right
             
-    print()
+    print('After:')
     show_matrix(m)
 
 
