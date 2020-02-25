@@ -16,5 +16,7 @@ public class p12_11_19
 				System.out.println(arg.charAt(i));
 			}
 		}
-	}	
+        
+        System.out.println("This is some more text!");
+	}
 }
