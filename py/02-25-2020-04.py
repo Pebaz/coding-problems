@@ -12,6 +12,14 @@ Strategy:
 
 Time complexity: O(n*2) meaning O(n)
 Space complexity: O(n)
+
+2nd Strategy (without stack):
+    1. ptr = None
+    2. first_item.pointer = ptr
+    3. first_item.pointer.pointer = first_item
+
+Time complexity: O(n)
+Space complexity: O(1)
 """
 
 class Node:
@@ -49,12 +57,23 @@ class LinkedList:
             item.pointer = stack.pop()
             item = item.pointer
 
+    def reverse2(self):
+        ptr = None
+        item = self.head
+        while item:
+            next_item = item.pointer
+            item.pointer = ptr
+            ptr = item
+            item = next_item
+        self.head = ptr
+
+
 linked_list = LinkedList(Node(1, Node(2, Node(3, Node(4, Node(5))))))
 
 
 print(linked_list)
 
-linked_list.reverse()
+linked_list.reverse2()
 
 print(linked_list)
 
