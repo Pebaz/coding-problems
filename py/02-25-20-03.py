@@ -29,9 +29,10 @@ def count_edges(node: Node, seen: set=set()) -> int:
     for n in node.nodes:
         seen.add(frozenset([node, n]))
         count_edges(n, seen)
-    print(seen)
     return len(seen)
 
 
 if __name__ == '__main__':
     print(f'Edge count for graph: {count_edges(graph)}')
+
+    print(f'Edge count for deepest_node: {count_edges(deepest_node)}')
