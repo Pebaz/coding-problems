@@ -59,9 +59,9 @@ def math(src):
         elif char in '+-*/':
             tokens.append(Operator(op=char))
 
-    print()
-    pprint(tokens)
-    print()
+    # print()
+    # pprint(tokens)
+    # print()
     
     stack = []
     sign = []
@@ -89,9 +89,9 @@ def math(src):
         else:
             stack[-1].append(token)
 
-    print()
-    pprint(stack)
-    print()
+    # print()
+    # pprint(stack)
+    # print()
 
     def evaluate(expr):
         terms = iter(expr)
@@ -113,10 +113,10 @@ def math(src):
 
         return value
 
-    print()
-    print(evaluate(stack))
-    print()
+    # print()
+    # print(evaluate(stack))
+    # print()
 
 if __name__ == '__main__':
     math('10 + -20 + (-30 + +40)')
-            
+    math('-1 + (2 + 3)')
