@@ -3,16 +3,11 @@ Find if a string contains all unique characters.
 */
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 
 
-enum bool {
-    false = 0,
-    true = 1
-};
-
-
-enum bool unique_chars1(char * str)
+bool unique_chars1(char * str)
 {
     for (int c1 = 0; c1 < strlen(str); c1++)
     {
@@ -47,7 +42,7 @@ void string_sort(char * str)
 }
 
 
-enum bool unique_chars(char * str)
+bool unique_chars(char * str)
 {
     string_sort(str);
 
